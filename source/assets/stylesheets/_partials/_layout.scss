@@ -6,13 +6,6 @@ section {
   width: 100%;
 }
 
-.image-background {
-  @include size(100% 80vh);
-  background-size: 100% auto;
-  background: url('http://goo.gl/Gj2XY6') no-repeat;
-  background-position: center;
-}
-
 .light-background {
   background: #fff;
   overflow: hidden;
