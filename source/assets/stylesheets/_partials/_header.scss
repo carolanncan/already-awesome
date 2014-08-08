@@ -1,0 +1,57 @@
+header {
+  @include size(100% 80vh);
+  position: relative;
+  text-align: center;
+  margin-top: 6.5em;
+}
+
+.overlay {
+  background: rgba($dark-gray, .8);
+}
+
+.header-wrap {
+  @include animation(fade-in 3s ease);
+  @include size(50%);
+  @include position(absolute, 0px 0px 0px 0px);
+  text-align: center;
+  overflow: auto;
+  margin: auto;
+}
+
+@include media($medium-screen-up) {
+  .header-wrap {
+    @include size(90% 70%);
+  }
+}
+
+.headline {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 2em;
+
+  & > * {
+   margin: .3em 0;
+  }
+}
+
+button {
+  background: none;
+  border: 1px solid #fff;
+  box-shadow: none;
+  margin: 1em;
+  outline: none;
+  padding: .5em 2em;
+
+  a {
+    color: #fff;
+  }
+
+  &:hover {
+    @include transition(all .15s linear);
+    background: #fff;
+
+    a {
+      color: $base-accent-color;
+    }
+  }
+}

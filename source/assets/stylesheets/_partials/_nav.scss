@@ -1,0 +1,82 @@
+nav {
+  @include size(100% auto);
+  @include position(fixed, 0px 0px 0 0);
+  background: rgba($dark-gray, .8);
+  color: white;
+  height: 105px;
+  z-index: 9;
+
+  &.small {
+    @include transition (all 1s ease);
+    background: rgba($dark-gray, 1);
+    height: 60px;
+
+    ul {
+      @include animation (fade-in 2s ease);
+      margin-top: 12px;
+      padding: 0;
+    }
+
+    .logo {
+      @include size(33px);
+
+      &:before {
+        font-size: 1.5em;
+        margin-top: .2em;
+      }
+    }
+  }
+}
+
+@include media($medium-screen-up) {
+  nav {
+    ul {
+      display: none;
+
+      li {
+        display: block;
+        margin: 1em 0;
+      }
+    }
+  }
+
+.logo {
+  display: none;
+}
+}
+
+ul {
+  @include animation (drop-in .9s ease);
+  text-align: center;
+  padding: .75em 0;
+
+  li {
+    display: inline-block;
+    letter-spacing: 2px;
+    margin: 0 2em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+}
+
+.logo {
+  @include animation (scale-in 1.3s ease);
+  @include size(80px);
+  background: rgba(#fff, .1);
+  border-radius: 50%;
+  border: 1px solid #fff;
+
+  &:hover {
+    @include transition(all .15s linear);
+    background: rgba($base-accent-color, .8);
+  }
+
+  &:before {
+    color: white;
+    content: '\f0e7';
+    display: block;
+    font-family: $icon;
+    font-size: 3em;
+    margin-top: .58em;
+  }
+}

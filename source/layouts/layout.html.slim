@@ -1,15 +1,5 @@
 doctype html
-/[if lt IE 7]
-  | <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7">
-/[if IE 7]
-  | <html class="no-js lt-ie10 lt-ie9 lt-ie8">
-/[if IE 8]
-  | <html class="no-js lt-ie10 lt-ie9">
-/[if IE 9]
-  | <html class="no-js lt-ie10">
-| <!--[if (gt IE 9)|!(IE)]<!-->
 html.nojs
-  | <!--<![endif]-->
   head
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
@@ -29,8 +19,14 @@ html.nojs
         a<> href="http://browsehappy.com/" upgrade your browser
         | to improve your experience.
 
-    == yield
+    = partial 'partials/_nav'
+    = partial 'partials/header'
+    main
+      = yield
+    = partial 'partials/footer'
 
+    script src="http://code.jquery.com/jquery-latest.js"
     = javascript_include_tag 'app'
+    = javascript_include_tag 'parallax'
     = partial 'partials/_google_analytics'
     = partial 'partials/_disqus'

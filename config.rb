@@ -1,10 +1,7 @@
-######################################################################
 # General settings.
-######################################################################
-
 # Meta.
 set :meta, {
-  title: 'Foo',
+  title: 'Already Awesome',
   url: 'http://foo.com',
 }
 
@@ -12,14 +9,10 @@ set :meta, {
 activate :syntax
 set :syntax_theme, Rouge::Themes::Base16
 
-# Change to your Google Analytics key (e.g. UA-XXXXXXXX-Y).
-# To disable GA, leave unset or set to nil
 # Code will only be injected in build environment
 # TODO: extract to MM extension
 set :ga_key, 'UA-XXXXXXX-Y'
 
-# Change to your Disqus shortname.
-# To Disable Disqus, leave unset or set to nil
 # TODO: extract to MM extension
 set :disqus_shortname, nil
 
@@ -39,11 +32,7 @@ end
 # Ignores.
 ignore '/calendar.html'
 
-
-######################################################################
 # Blog settings.
-######################################################################
-
 Time.zone = "Amsterdam"
 
 activate :blog do |blog|
@@ -56,23 +45,12 @@ activate :blog do |blog|
   blog.per_page = 10
 end
 
-# Enable XML feed. Don't forget to edit feed.xml.builder first.
-# page "/feed.xml", layout: false
-
-
-######################################################################
 # Development environment.
-######################################################################
-
 configure :development do
   activate :livereload, apply_js_live: false, apply_css_live: false
 end
 
-
-######################################################################
 # Build environment.
-######################################################################
-
 configure :build do
   activate :relative_assets
   activate :directory_indexes
