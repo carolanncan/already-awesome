@@ -1,5 +1,4 @@
 //= require font-awesome
-//= require normalize-css/normalize
 //= require _erb/_syntax
 
 @charset "utf-8";
@@ -8,9 +7,7 @@
 @import 'bitters/bitters';
 @import 'neat';
 
-@import '_partials/animations';
 @import '_partials/footer';
 @import '_partials/header';
 @import '_partials/layout';
 @import '_partials/nav';
-@import '_partials/parallax';
