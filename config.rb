@@ -1,56 +1,23 @@
-# General settings.
-# Meta.
 set :meta, {
   title: 'Already Awesome',
   url: 'http://foo.com',
 }
 
-# Syntax highlighting.
 activate :syntax
 set :syntax_theme, Rouge::Themes::Base16
 
-# Code will only be injected in build environment
-# TODO: extract to MM extension
 set :ga_key, 'UA-XXXXXXX-Y'
 
-# TODO: extract to MM extension
-set :disqus_shortname, nil
-
-# Locations.
 set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
 set :fonts_dir, 'assets/fonts'
 set :partials_dir, 'partials'
 
-after_configuration do
-  # Add bower's directory to sprockets asset path.
-  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-  sprockets.append_path File.join "#{root}", @bower_config["directory"]
-end
-
-# Ignores.
-ignore '/calendar.html'
-
-# Blog settings.
-Time.zone = "Amsterdam"
-
-activate :blog do |blog|
-  blog.prefix = 'blog'
-  blog.permalink = '{year}/{title}.html'
-  blog.taglink = "tags/{tag}.html"
-  blog.default_extension = ".md"
-
-  blog.paginate = true
-  blog.per_page = 10
-end
-
-# Development environment.
 configure :development do
   activate :livereload, apply_js_live: false, apply_css_live: false
 end
 
-# Build environment.
 configure :build do
   activate :relative_assets
   activate :directory_indexes
