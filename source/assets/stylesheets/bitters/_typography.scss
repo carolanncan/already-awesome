@@ -15,6 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: $base-font-size * 2.25; // 16 * 2.25 = 36px
+  font-weight: 600;
 }
 
 h2 {
@@ -23,6 +24,7 @@ h2 {
 
 h3 {
   font-size: $base-font-size * 1.75; // 16 * 1.75 = 28px
+  font-weight: 600;
 }
 
 h4 {
@@ -65,7 +67,8 @@ p.italic {
 
 .italic {
   font-family: $serif;
-  font-style: italic;
+  font-style: normal;
+  font-weight: 500;
   letter-spacing: normal;
 }
 

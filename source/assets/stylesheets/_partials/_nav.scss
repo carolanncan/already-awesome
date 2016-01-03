@@ -3,7 +3,6 @@ nav {
   @include position(fixed, 0px 0px 0 0);
   background: rgba($dark-gray, .8);
   color: white;
-  height: 105px;
   z-index: 9;
 
   &.small {
@@ -40,9 +39,9 @@ nav {
     }
   }
 
-.logo {
-  display: none;
-}
+  .logo {
+    display: none;
+  }
 }
 
 ul {
@@ -52,6 +51,7 @@ ul {
 
   li {
     display: inline-block;
+    font-size: .75em;
     letter-spacing: 2px;
     margin: 0 2em;
     text-transform: uppercase;
@@ -61,7 +61,7 @@ ul {
 
 .logo {
   @include animation (scale-in 1.3s ease);
-  @include size(80px);
+  @include size(50px);
   background: rgba(#fff, .1);
   border-radius: 50%;
   border: 1px solid #fff;
@@ -76,7 +76,9 @@ ul {
     content: '\f0e7';
     display: block;
     font-family: $icon;
-    font-size: 3em;
-    margin-top: .58em;
+    font-size: 2em;
+    left: 1px;
+    margin-top: 0.48em;
+    position: relative;
   }
 }
