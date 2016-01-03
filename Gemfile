@@ -5,7 +5,7 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 
 gem "middleman"
 gem "middleman-blog"
-gem "middleman-gh-pages"
+gem 'middleman-deploy', '~> 1.0'
 gem "middleman-imageoptim"
 gem "middleman-livereload"
 gem "middleman-minify-html"

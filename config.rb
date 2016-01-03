@@ -9,6 +9,13 @@ set :meta, {
 activate :syntax
 set :syntax_theme, Rouge::Themes::Base16
 
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.branch = "gh-pages"
+  deploy.strategy = :force_push
+  deploy.build_before = true
+end
+
 # Code will only be injected in build environment
 # TODO: extract to MM extension
 set :ga_key, 'UA-XXXXXXX-Y'
